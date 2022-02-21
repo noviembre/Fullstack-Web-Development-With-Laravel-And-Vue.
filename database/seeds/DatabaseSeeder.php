@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+                 #-----each time that create a fake user...
+         factory(App\User::class, 3)->create()->each(function($user) {
+
+            $user->questions()
+                ->saveMany(
+                #--- it will create fake questions
+                    factory(App\Question::class, random_int(1, 5))->make()
+                );
+        });
     }
 }
