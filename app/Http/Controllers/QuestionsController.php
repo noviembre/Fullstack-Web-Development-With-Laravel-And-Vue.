@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Questions;
+use App\Question;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
@@ -16,7 +16,7 @@ class QuestionsController extends Controller
     public function index()
     {
 
-        $questions = Questions::with('user')->latest()->paginate(5);
+        $questions = Question::with('user')->latest()->paginate(5);
         return view('questions.index', compact('questions'));
 
 
@@ -29,7 +29,8 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        $question = new Question();
+        return view('questions.create', compact('question'));
     }
 
     /**
