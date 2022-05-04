@@ -16,8 +16,8 @@
     <label for="question-body">
         Explain you question
     </label>
-    <textarea name="body" value="{{old('body')}}" id="question-body" rows="10"
-              class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}">{{$question->body}}</textarea>
+    <textarea name="body" id="question-body" rows="10" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}">{{old('body', $question->body )}}</textarea>
+
 
     @if ($errors->has('body'))
         <div class="invalid-feedback">
@@ -28,6 +28,6 @@
 
 <div class="form-group">
     <button type="submit" class="btn btn-outline-primary btn-lg">
-        Ask this question
+        {{ $buttonText }}
     </button>
 </div
