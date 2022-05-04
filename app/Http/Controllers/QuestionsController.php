@@ -49,10 +49,10 @@ class QuestionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Questions $questions
+     * @param  \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Questions $questions)
+    public function show(Question $question)
     {
         //
     }
@@ -60,22 +60,22 @@ class QuestionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Questions $questions
+     * @param  \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function edit(Questions $questions)
+    public function edit(Question $question)
     {
-        //
+        return view("questions.edit", compact('question'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Questions $questions
+     * @param  \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Questions $questions)
+    public function update(Requet $request, Question $question)
     {
         //
     }
@@ -83,10 +83,10 @@ class QuestionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Questions $questions
+     * @param  \App\Question $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Questions $questions)
+    public function destroy(Question $question)
     {
         //
     }
