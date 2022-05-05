@@ -51,6 +51,17 @@
                                         <div class="ml-auto">
                                             <a href="{{ route('questions.edit', $question->id) }}"
                                                class="btn btn-sm btn-outline-info">Edit</a>
+
+                                            <form method="post" action="{{ route('questions.destroy', $question->id) }}">
+                                                <!--- about: method('DELETE') and csrf token
+                                                only from Laravel 5.6 we can use the blade directive
+                                                * @medeleteCD01
+                                                -->
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
+
                                         </div>
                                     </div>
 
